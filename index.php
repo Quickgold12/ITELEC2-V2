@@ -12,17 +12,22 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>SiGN IN</h1>
+    <h1>SIGN IN</h1>
     <form action="" method="POST">
         <input type="hidden" name="csrf_token" value="<?php echo $csrf_token?>">
         <input type="email" name="email" placeholder="Enter Email" required> <br>
-        <input type="password" name="password" placeholder="Enter Email" required> <br>
+        <input type="password" name="password" placeholder="Enter Password" required> <br>
         <button type="submit" name="btn-signin">SIGN IN</button>
     </form>
 
 
     <h1>REGISTRATION</h1>
-    <form action="" method="POST">
+    <form action="dashboard/admin/authentication/admin-class.php" method="POST">
+        <input type="hidden" name="csrf_token" value="<?php echo $csrf_token ?>">
+        <input type="text" name="username" placeholder="Enter Username" required> <br>
+        <input type="email" name="email" placeholder="Enter Email" required> <br>
+        <input type="password" name="password" placeholder="Enter Password" required> <br>
+        <button type="submit" name="btn-signup">SIGN UP! </button>
     
     </form>
 </body>
