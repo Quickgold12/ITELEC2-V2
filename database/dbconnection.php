@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class Database
 {
@@ -8,42 +8,36 @@ class Database
     private $username;
     private $password;
     public $conn;
-    
-    public function __construc(){
-        if($_SERVER['SERVER_NAME'] ===  'localhost' || $_SERVER['SERVER_ADDR'] === '127.0.0.1' || $_SERVER['SERVER_ADDR'] === '192.168.1.72') 
-        {
-            $this->host = "locahost";
-            $this->port = "";
+
+    public function __construct()
+    {
+        if($_SERVER['SERVER_NAME'] === 'localhost' || $_SERVER['SERVER_ADDR'] === '127.0.0.1' || $_SERVER['SERVER_ADDR'] === '192.168.1.72'){
+            $this->host = "localhost";
+            $this->port = "3307";
             $this->db_name = "itelec2";
             $this->username = "root";
             $this->password = "";
         }
-        else
-        {
-            $this->host = "locahost";
+        else{
+            $this->host = "localhost";
             $this->db_name = "";
             $this->username = "";
             $this->password = "";
-
         }
     }
-
 
     public function dbConnection()
     {
         $this->conn = null;
-        try {
-            $this->conn =  new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+        try{
+            $this->conn = new PDO("mysql:host=" . $this->host . ";port=" . $this->port . ";dbname=" . $this->db_name, $this->username, $this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch(PDOException $exception)
-        {
-            echo"connection error:" . $exception->getMessage();
+        }
+        catch(PDOException $exception){
+            echo "Connection Error: " . $exception->getMessage();
         }
         return $this->conn;
     }
-
 }
-
-
 
 ?>
