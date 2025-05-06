@@ -1,6 +1,10 @@
 <?php 
 require_once __DIR__.'/../../../database/dbconnection.php';
 require_once __DIR__.'/../../../config/settings-configuration.php';
+require_once __DIR__.'/../../../src/vendor/autoload.php';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
 class ADMIN
 {
