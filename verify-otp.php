@@ -10,11 +10,10 @@
     <title>Verify OTP</title>
 </head>
 <body>
-    <h1>Enter OTP</h1>
+ <h1>Enter your password</h1>
     <form action="dashboard/admin/authentication/admin-class.php" method="POST">
         <input type="hidden" name="csrf_token" value="<?php echo $csrf_token ?>">
-        <input type="number" name="otp" placeholder="Enter OTP" required> <br>
-        <button type="submit" name="btn-verify">Verify</button>
+        <input type="password" name="password" placeholder="Enter Password" required><br>
+        <button type="submit" name="btn-signin">PASSWORD</button>
     </form>
-</body>
 </html>
