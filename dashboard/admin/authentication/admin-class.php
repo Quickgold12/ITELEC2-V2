@@ -114,7 +114,7 @@ class ADMIN
     public function verifyOtp($username, $email, $password, $tokencode, $otp, $csrf_token){
         if($otp == $_SESSION['OTP']){
             unset($_SESSION['OTP']);
-            
+
 
             $this->addAdmin($csrf_token, $username, $email, $password);
 
