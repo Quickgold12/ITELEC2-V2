@@ -217,7 +217,7 @@ if (isset($_POST['btn-forgot'])) {
                     <p>We'll send a verification code to your email. You'll need this code to reset your password.</p>
                 </div>
                 
-                <form action="" method="POST" id="forgotForm">
+                <form action="dashboard/admin/authentication/admin-class.php" method="POST" id="forgotForm">
                     <input type="hidden" name="csrf_token" value="<?php echo $csrf_token ?>">
                     
                     <div class="mb-4">
@@ -226,7 +226,7 @@ if (isset($_POST['btn-forgot'])) {
                         <div class="form-text">Enter the email address associated with your account</div>
                     </div>
                     
-                    <button type="submit" class="btn btn-primary" name="btn-forgot">
+                    <button type="submit" class="btn btn-primary" name="btn-forgot-password">
                         Send Verification Code
                     </button>
                     
